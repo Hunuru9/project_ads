@@ -1,11 +1,16 @@
 import java.io.File;
 import java.io.FileInputStream;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
+import org.w3c.dom.Document;
+
 
 
 public class ExcelController {
@@ -45,6 +50,20 @@ public class ExcelController {
 		}
 	}
 
+	public void readXML(String path) throws Exception {
+		try {
+		File file = new File("C:\\Users\\loure\\OneDrive\\Ambiente de Trabalho\\XML.xml");  //change file name
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	    DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+	    Document doc = dBuilder.parse(file);
+	    doc.getDocumentElement().normalize();
+		System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 
 	/**
 	 * Devolve os headers do excel num vetor.
