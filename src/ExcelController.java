@@ -27,8 +27,8 @@ public class ExcelController {
 	 * 
 	 * @author Francisco Mendes
 	 */
-	public void readExcel(String path) throws Exception {
-		FileInputStream fis =new FileInputStream(new File(path));  
+	public void readExcel() throws Exception {
+		FileInputStream fis =new FileInputStream(new File("Caracterizacao das salas.xls"));  
 		HSSFWorkbook workbook = new HSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);
 
