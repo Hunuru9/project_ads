@@ -15,6 +15,26 @@ public class Room {
         this.number_characteristics = number_characteristics;
         this.characteristics = characteristics;
     }
+
+	public String getName() {
+		return name;
+	}
+
+	public int getCapacidade() {
+		return capacidade;
+	}
+
+	public int getCapacidade_exame() {
+		return capacidade_exame;
+	}
+
+	public int getNumber_characteristics() {
+		return number_characteristics;
+	}
+
+	public List<String> getCharacteristics() {
+		return characteristics;
+	}
     
     
 
